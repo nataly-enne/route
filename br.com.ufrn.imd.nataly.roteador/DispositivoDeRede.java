@@ -1,21 +1,14 @@
 public abstract class DispositivoDeRede {
 
-    public String getIP() {
-        return IP;
-    }
+    String IP;
+    String MAC;
 
-    public void setIP(String IP) {
-        this.IP = IP;
-    }
+    public abstract String getIP();
 
-    public String getMAC() {
-        return MAC;
-    }
+    public abstract void setIP(String IP);
 
-    public void setMAC(String MAC) {
-        this.MAC = MAC;
-    }
+    public abstract String getMAC();
 
-    String IP, MAC;
+    public abstract void setMAC(String MAC);
 
 }
