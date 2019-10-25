@@ -1,7 +1,9 @@
+package conections;
+
 public abstract class DispositivoDeRede {
 
-    String IP;
-    String MAC;
+    protected String IP;
+    protected String MAC;
 
     public abstract String getIP();
 

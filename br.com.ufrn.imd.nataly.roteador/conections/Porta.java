@@ -1,8 +1,12 @@
+package conections;
+
+import routers.Roteador;
+
 public class Porta {
 
-    //TODO-buffer com a fila de pacotes
+    //TODO - buffer com a fila de pacotes
 
-    Roteador roteadorDestino;
+    private Roteador roteadorDestino;
 
     public Roteador getRoteadorDestino() {
         return roteadorDestino;

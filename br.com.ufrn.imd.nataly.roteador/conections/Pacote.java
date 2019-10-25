@@ -1,9 +1,11 @@
+package conections;
+
 public class Pacote {
 
-    String dados;
-    String destino;
-    int Idestino;
-    int Jdestino;
+    private String dados;
+    private String destino;
+    private int Idestino;
+    private int Jdestino;
 
     public String getDados() {
         return dados;
