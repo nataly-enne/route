@@ -22,36 +22,22 @@ public class Main {
         //Definindo as portas conectadas a cada roteador
         int j = 0;
         for (int i = 0; i < 3; i++){
-            r[i][j].setPosI(i);
-            for(j = 0; j < 3; j++){
+            r[i][j].setPosI(i);for(j = 0; j < 3; j++){
                 r[i][j].setPosJ(j);
-                r[i][j].PRede.setRoteadorDestino(null); // TODO - Definir como deve ficar a porta com a rede
                 //conections.Porta Cima:
-                if(i == 0){
-                    r[i][j].PCima.setRoteadorDestino(null);
-                }
-                else{
+                if(i != 0) {
                     r[i][j].PCima.setRoteadorDestino(r[i-1][j]);
                 }
                 //conections.Porta Baixo:
-                if(i == 2){
-                    r[i][j].PBaixo.setRoteadorDestino(null);
-                }
-                else{
+                if(i != 2){
                     r[i][j].PBaixo.setRoteadorDestino(r[i+1][j]);
                 }
                 //conections.Porta Esquerda
-                if(j == 0){
-                  r[i][j].PEsquerda.setRoteadorDestino(null);
-                }
-                else{
+                if(j != 0){
                     r[i][j].PEsquerda.setRoteadorDestino(r[i][j-1]);
                 }
                 //conections.Porta Direta
-                if(j == 2){
-                 r[i][j].PDireita.setRoteadorDestino(null);
-                }
-                else{
+                if(j != 2){
                     r[i][j].PDireita.setRoteadorDestino(r[i][j+1]);
                 }
             }
