@@ -2,7 +2,12 @@ package routers;
 
 import conections.*;
 
+import java.util.LinkedList;
+import java.util.Queue;
+
 public class Roteador extends DispositivoDeRede implements Roteamento {
+
+    // ATRIBUTOS
 
     private int posI;
     private int posJ;
@@ -11,7 +16,9 @@ public class Roteador extends DispositivoDeRede implements Roteamento {
     public Porta PEsquerda;
     public Porta PDireita;
     public Porta PRede;
+    private Queue<Pacote> bufferDeEntrada = new LinkedList<>();
 
+    // MÉTODOS
 
     public void setPosI(int posI) {
         this.posI = posI;
@@ -39,28 +46,42 @@ public class Roteador extends DispositivoDeRede implements Roteamento {
         this.MAC = MAC;
     }
 
-    public int roteamento(Pacote pacote){
+    public void receberPacote(Pacote pacote) {
+        bufferDeEntrada.add(pacote);
+    }
+
+    public Porta roteamento(Pacote pacote){
 
         int i = pacote.getIdestino();
         int j = pacote.getJdestino();
 
         if(posI > i){
-            return 1;   // 1 - ir para porta de cima
+            return PCima;   // ir para porta de cima
         }
         else if(posI < i){
-            return 2;   // 2 - ir para porta de baixo
+            return PBaixo;   // ir para porta de baixo
         }
         else if(posJ < j){
-            return 3;   // 3 - ir para porta da direita
+            return PDireita;   // ir para porta da direita
         }
         else if(posJ > j ){
-            return 4;   // 3 - ir para porta da esquerda
+            return PEsquerda;   // ir para porta da esquerda
         }
         else{
-            return 0;   //0 - pacote chegou ao destino
+            return PRede;   // pacote chegou ao destino
         }
 
         //TODO - Função para transferir os pacotes de um buffer para outro
+        // TESTANDO (função de transferir pacote do buffer pra saída)
         //TODO - Função para quando chegar ao destino escrever em arquivo
+    }
+
+    public void transferirPacote (Pacote pacote) {
+        Porta portaDeSaida = roteamento(pacote);
+
+        portaDeSaida.setSaida(pacote);
+        bufferDeEntrada.remove(pacote);
+
+        portaDeSaida.getRoteadorDestino().bufferDeEntrada.add(pacote);
     }
 }
