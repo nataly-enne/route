@@ -73,7 +73,7 @@ public class Roteador extends DispositivoDeRede implements Roteamento {
 
         //TODO - Função para transferir os pacotes de um buffer para outro
         // TESTANDO (função de transferir pacote do buffer pra saída)
-        //TODO - Função para quando chegar ao destino escrever em arquivo
+        //TODO - Função para quando chegar ao destino salvar no buffer de rede
     }
 
     public void transferirPacote (Pacote pacote) {

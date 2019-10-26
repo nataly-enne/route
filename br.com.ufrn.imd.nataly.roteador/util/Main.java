@@ -9,28 +9,23 @@ public class Main {
         //Criando roteadores em uma matriz 3x3 e setando as portas
         Roteador[][] r = new Roteador[3][3];
 
-        //adicionando os ips dados:
+        //adicionando os ips dados e definindo as portas conectadas a cada roteador :
         int aux = 0;
-        for(int k = 0; k < 3; k++){
-            for(int l = 0; l < 3; l++){
-                r[k][l] = new Roteador();
-                r[k][l].setIP(new StringBuilder().append("192.168.0.").append(aux).toString());
-                aux++;
-            }
-        }
-
-        //Definindo as portas conectadas a cada roteador
         int j = 0;
-        for (int i = 0; i < 3; i++){
-            r[i][j].setPosI(i);for(j = 0; j < 3; j++){
+        for (int i = 0; i < r.length; i++){;
+            for(j = 0; j < r[i].length; j++){
+                r[i][j] = new Roteador();
+                r[i][j].setIP(new StringBuilder().append("192.168.0.").append(aux).toString());
+                aux++;
                 r[i][j].setPosJ(j);
+                r[i][j].setPosI(i);
                 //conections.Porta Cima:
                 if(i != 0) {
                     r[i][j].PCima.setRoteadorDestino(r[i-1][j]);
                 }
                 //conections.Porta Baixo:
                 if(i != 2){
-                    r[i][j].PBaixo.setRoteadorDestino(r[i+1][j]);
+                    r[i][j].PBaixo.setRoteadorDestino(r[i+1][j]); //Apesar do NullPointerException ta indicando aqui, ele tbm acontece nos outros set L24, L32 e L36
                 }
                 //conections.Porta Esquerda
                 if(j != 0){
@@ -42,5 +37,6 @@ public class Main {
                 }
             }
         }
+
     }
 }
