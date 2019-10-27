@@ -8,7 +8,7 @@
 
 # Divisão de tarefas:
   - Maurício Ramalho: Funções relacionadas a transferências de pacotes, teste realizado no main, tratamento de erros de compilação.
-  - Nátaly Enne: Organização do código e pacotes, criação de classes e definição de atributos e métodos, tratamento de erros de compilação.
+  - Nátaly Enne: Organização do código e pacotes, criação de classes e definição de atributos e métodos, criação do versão inicial da função de roteamento.
   - Van Allem Barreto: Inicialização dos roteadores e portas no main, criação de classes e definição de atributos e métodos, tratamento de erros de compilação. 
 
 # Dificuldades:
