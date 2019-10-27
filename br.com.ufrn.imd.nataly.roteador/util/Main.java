@@ -13,7 +13,7 @@ public class Main {
         Roteador[][] roteadores = new Roteador[3][3];
 
         //adicionando os ips dados e definindo as portas conectadas a cada roteador :
-        int aux = 0;
+        int aux = 1;
 
         for (int i = 0; i < roteadores.length; i++) {
             for (int j = 0; j < roteadores[i].length; j++){
