@@ -6,9 +6,6 @@ import routers.Roteador;
 
 public class Porta {
 
-    //TODO - buffer com a fila de pacotes
-    // TESTANDO (buffer e saída)
-
     // ATRIBUTOS
 
     private Pacote saida;
@@ -33,7 +30,10 @@ public class Porta {
         this.roteadorDestino = roteadorDestino;
     }
 
-    public void enviarPacote() {
-        getRoteadorDestino().receberPacote(this.getSaida());
+    public Roteador transferirPacote() {
+        if (getRoteadorDestino() != null) {
+            getRoteadorDestino().receberPacote(getSaida());
+        }
+        return getRoteadorDestino();
     }
 }

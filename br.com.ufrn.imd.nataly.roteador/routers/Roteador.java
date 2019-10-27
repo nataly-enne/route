@@ -50,6 +50,14 @@ public class Roteador extends DispositivoDeRede implements Roteamento {
         bufferDeEntrada.add(pacote);
     }
 
+    public Pacote getPrimeiroPacotedaFila() {
+        return bufferDeEntrada.peek();
+    }
+
+    public boolean checarChegadaDoPacote(Pacote pacote) {
+        return bufferDeEntrada.contains(pacote);
+    }
+
     public Porta roteamento(Pacote pacote){
 
         int i = pacote.getIdestino();
@@ -76,12 +84,11 @@ public class Roteador extends DispositivoDeRede implements Roteamento {
         //TODO - Função para quando chegar ao destino salvar no buffer de rede
     }
 
-    public void transferirPacote (Pacote pacote) {
-        Porta portaDeSaida = roteamento(pacote);
+    public Roteador transferirPacote () {
+        Porta portaDeSaida = roteamento(bufferDeEntrada.peek());
 
-        portaDeSaida.setSaida(pacote);
-        bufferDeEntrada.remove(pacote);
+        portaDeSaida.setSaida(bufferDeEntrada.poll());
 
-        portaDeSaida.getRoteadorDestino().bufferDeEntrada.add(pacote);
+        return portaDeSaida.transferirPacote();
     }
 }

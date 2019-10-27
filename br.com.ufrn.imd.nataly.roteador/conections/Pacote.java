@@ -22,6 +22,7 @@ public class Pacote {
     public String getDestino(){
         return this.destino;
     }
+
     public void setPosicaoDestino(int i, int j){
         this.Idestino = i;
         this.Jdestino = j;
