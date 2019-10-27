@@ -7,9 +7,9 @@
   IDE utilizada nessa matéria, e compilar normalmente.
 
 # Divisão de tarefas:
-  Maurício Ramalho: Funções relacionadas a transferências de pacotes, teste realizado no main, tratamento de erros de compilação.
-  Nátaly Enne: Organização do código e pacotes, criação de classes e definição de atributos e métodos, tratamento de erros de compilação.
-  Van Allem Barreto: Inicialização dos roteadores e portas no main, criação de classes e definição de atributos e métodos, tratamento de erros de compilação. 
+  - Maurício Ramalho: Funções relacionadas a transferências de pacotes, teste realizado no main, tratamento de erros de compilação.
+  - Nátaly Enne: Organização do código e pacotes, criação de classes e definição de atributos e métodos, tratamento de erros de compilação.
+  - Van Allem Barreto: Inicialização dos roteadores e portas no main, criação de classes e definição de atributos e métodos, tratamento de erros de compilação. 
 
 # Dificuldades:
   - A maior dificuldade encontrada foi quanto ao arquivo explicando o que deveria ser feito neste trabalho, deixando ele bem confuso 
