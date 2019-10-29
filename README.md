@@ -1,23 +1,50 @@
-# Roteador
+# Router
   Projeto de simulação de um roteador em Java.
-# Componentes: Maurício Ramalho, Nátaly Enne e Van Allem Barreto 
+
+# What is it?
+O projeto consiste na implementação do funcionamento da comunicação de roteadores, da entrega de pacotes. Basicamente, o roteamento de pacotes consiste em encaminhar pacotes de um roteador para outro. Dada uma comunicação entra pacotes deve-se enviar um pacote do roteador origem para o seu roteador destino.
 
 # Compilação:
-  Para compilação do código basta extrair a pasta do .zip e importar o projeto no IntelliJ IDEA, 
-  IDE utilizada nessa matéria, e compilar normalmente.
+É possvel utilizando qualquer IDE, compilando a classe `Main`. OU, dentro da pasta util, executar a seguinte linha de comando:
 
-# Divisão de tarefas:
-  - Maurício Ramalho: Funções relacionadas a transferências de pacotes, teste realizado no main, tratamento de erros de compilação.
-  - Nátaly Enne: Organização do código e pacotes, criação de classes e definição de atributos e métodos, criação do versão inicial da função de roteamento.
-  - Van Allem Barreto: Inicialização dos roteadores e portas no main, criação de classes e definição de atributos e métodos, tratamento de erros de compilação. 
-
-# Dificuldades:
-  - A maior dificuldade encontrada foi quanto ao arquivo explicando o que deveria ser feito neste trabalho, deixando ele bem confuso 
-  e, em certos momentos, tornou o desenvolvimento muito truncado.
-  - Por falta de tempo e clareza de como deveriam ser utilizados os arquivos .txt no projeto, acabamos não implementando os métodos de 
-  leitura de ips por arquivo e escrita final da porta rede para um arquivo com as comunicações que aconteceram no decorrer do código.
-
-# Funcionamento do teste:
+```bash
+javac Main.java
+```
+Em seguida, para executar:
+```bash
+java Main
+```
+# Explicando a classe Teste.java:
   O teste foi realizado criando um pacote e colocando ele no buffer de um determinado roteador, após isso, é chamada a rotina de transmissão entre os roteadores, até chegar ao destino.
   O teste teve sucesso em todos os casos nos quais o último dígito do IP do roteador de origem era "maior ou igual" que o do roteador destino. Por exemplo, para um roteador de origem terminando em ".4", o roteador de destino daria certo caso terminasse em ".4", ".3", ".2" ou ".1". Caso contrário, a operação terminava em erro.
   Não conseguimos entender o porquê desse erro, já que os atributos importantes para essa operação aparentemente não davam brecha para tal.
+
+## Colaboradores
+<table>
+  <tr>
+    <td align="center">
+      <a href="https://github.com/nataly-enne">
+        <img src="https://avatars3.githubusercontent.com/u/26802307?s=400&v=4" width="100px;" alt="Nátaly Enne"/>
+        <br />
+        <sub><b>Nátaly Enne</b></sub>
+      </a><br />
+      <a href="https://github.com/nataly-enne/router/commits?author=nataly-enne" title="Code">💻</a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/Vanz5">
+        <img src="https://avatars2.githubusercontent.com/u/36575665?s=400&v=4" width="100px;" alt="Van Allem"/>
+        <br />
+        <sub><b>Van Allem</b></sub>
+      </a><br />
+      <a href="https://github.com/nataly-enne/router/commits?author=Vanz5" title="Code">💻</a>
+    </td>
+    <td align="center">
+      <a href="https://github.com/ilikemiojo">
+        <img src="https://avatars1.githubusercontent.com/u/32806113?s=400&v=4" width="100px;" alt="Maurício Ramalho"/>
+        <br />
+        <sub><b>Maurício Ramalho</b></sub>
+      </a><br />
+      <a href="https://github.com/nataly-enne/router/commits?author=ilikemiojo" title="Code">💻</a>
+    </td>
+  </tr>
+</table>
